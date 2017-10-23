@@ -1,0 +1,7 @@
+$breakpoint-tb: 1000px;
+$breakpoint-sp: 640px;
+
+$breakpoints: (
+    'tb': 'screen and (max-width: 1000px)',
+    'sp': 'screen and (max-width: 640px)',
+);

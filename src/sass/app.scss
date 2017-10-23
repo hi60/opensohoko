@@ -1,5 +1,12 @@
 @import './Foundation/reset';
 @import './Object/component/productMap';
+@import './Layout/mediaquery';
+
+@mixin mq($breakpoint: 'tb') {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
 
 img {
     max-width: 100%;
@@ -12,11 +19,39 @@ img {
 h1 {
     font-size: 42px;
     text-align: center;
+
+    @include mq(sp) {
+        font-size: 32px;
+    }
 }
 
 a {
     color: #000;
     text-decoration: none;
+}
+
+.is-orange {
+    color: orange;
+}
+
+.is-gray {
+    color: gray;
+}
+
+.is-top {
+    padding: 26px 20px 14px;
+
+    @include mq(sp) {
+        padding: 10px;
+    }
+}
+
+.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    padding: 0 20px;
 }
 
 .wrapper {
@@ -39,6 +74,21 @@ a {
                 right: 0;
             }
         }
+
+        &__sponsor {
+            position: absolute;
+            top: 90%;
+            margin: 0 auto;
+            right: 0;
+            left: 0;
+
+            &__name {
+            color: #fff;
+            font-size: 18px;
+            display: block;
+            text-align: center;
+            }
+        }
     }
 
     .nav__wrapper {
@@ -48,10 +98,28 @@ a {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 26px 20px 14px;
+
+        @include mq(sp) {
+            justify-content: center;
+            flex-flow: column;
+            padding-bottom: 15px;
+        }
+
+        &__logo {
+
+            @include mq(sp) {
+                width: 130px;
+                height: 50px;
+            }
+        }
         
         .nav__menu {
             display: flex;
+
+            @include mq(sp) {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
 
             & > li {
                 color: #fff;
@@ -68,6 +136,10 @@ a {
                     content: '|';
                     display: inline-block;
                     padding: 0 8px;
+                    
+                    @include mq(sp) {
+                        padding: 0 .3em;
+                    }
                 }
 
                 &:last-child:after {
@@ -84,16 +156,33 @@ a {
         background-color: #EEE;
         background-image: url('../images/png/bk.png');
 
+        @include mq(tb) {
+            padding: 75px 20px 100px;
+        }
+
+        @include mq(sp) {
+            padding: 20px 0;
+        }
+
         .message {
             text-align: center;
             
             &__title {
                 margin-top: 30px;
+
+                @include mq(sp) {
+                    margin-top: 20px;
+                }
             }
 
             &__explain {
                  margin-top: 30px;
                  line-height: 2.5em;
+
+                 @include mq(sp) {
+                     margin-top: 20px;
+                     line-height: 2.0em;
+                 }
 
                  a {
                      text-decoration: underline;
@@ -105,30 +194,60 @@ a {
             width: 1000px;
             margin: 80px auto 0;
 
+            @include mq(tb) {
+                width: 95%;
+            }
+
             &__list {
+                position: relative;
                 display: flex;
-                justify-content: space-between;
+                justify-content: flex-start;
                 align-items: center;
+                
+                @include mq(sp) {
+                    flex-wrap: wrap;
+                    padding-right: 90px;
+                }
 
                 &__name {
                     display: flex;
+
+                    @include mq(sp) {
+                        flex-wrap: wrap;
+                        font-size: 15px;
+                    }
     
                     & > li {
-    
-                        a:hover {
-                            color: orange;
-                        }
+                        cursor: pointer;
     
                         &:after {
                             content: '|';
+                            color: #000;
                             display: inline-block;
                             padding: 0 8px;
+
+                            @include mq(sp) {
+                                padding: 0 .3em;
+                            }
                         }
+    
+                        // &:hover {
+                        //     color: orange;
+                        // }
     
                         &:last-child:after {
                             display: none;
                         }
                     }
+                }
+
+                &__img {
+                    position: absolute;
+                    right: 0;
+                    background-image: url('/assets/images/png/icon_all.png');
+                    background-repeat: no-repeat;
+                    width: 80px;
+                    height: 40px;
                 }
             }
 
@@ -139,6 +258,16 @@ a {
                 flex-wrap: wrap;
                 margin: 0 0 100px -20px;
 
+                @include mq(tb) {
+                    justify-content: center;
+                    margin: 0 0 100px -4%;
+                }
+
+                @include mq(sp) {
+                    flex-flow: column;
+                    margin: 0 0 20px 0;
+                }
+
                 & > li {
                     position: relative;
                     display: inline-block;
@@ -147,7 +276,21 @@ a {
                     margin: 20px 0 0 20px;
                     width: 320px;
                     box-sizing: border-box;
+
+                    @include mq(tb) {
+                        margin: 20px 0 0 4%;
+                        width: 46%;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
                     
+                    @include mq(sp) {
+                        margin: 20px 0 0 0;
+                        width: 100%;
+                    }
+
                     &:hover {
                         border: 2px solid #000;
                         padding: 8px;
@@ -193,6 +336,10 @@ a {
                     padding: 13px 0 12px;
                     box-sizing: border-box;
                     background-color: #000;
+
+                    @include mq(tb) {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -228,17 +375,36 @@ a {
                 align-items: flex-start;
                 margin-top: 50px;
 
+                @include mq(tb) {
+                    flex-wrap: wrap;
+                }
+
+                @include mq(sp) {
+                    flex-flow: column;
+                    align-items: flex-start;
+                    padding: 0 10px;
+                }
+
                 &__box {
                     width: 250px;
                     padding: 10px;
+                    box-sizing: border-box;
+
+                    @include mq(sp) {
+                        width: 100%;
+                    }
 
                     &__update {
                         padding: 3px 5px;
-                        width: 250px;
+                        width: 230px;
                         background-color: #000;
                         display: flex;
                         justify-content: space-between;
                         box-sizing: border-box;
+
+                        @include mq(sp) {
+                            width: 100%;
+                        }
 
                         &__text {
                             color: #fff;
@@ -248,6 +414,11 @@ a {
                     img {
                         width: 250px;
                         height: 140px;
+
+                        @include mq(sp) {
+                            width: 100%;
+                            object-fit: cover;
+                        }
                     }
 
                     &__index {
@@ -289,6 +460,11 @@ a {
             display: flex;
             justify-content: center;
             align-items: center;
+
+            @include mq(sp) {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
 
             & > li {
 

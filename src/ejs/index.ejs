@@ -21,10 +21,13 @@
             <a href="" class='keyvisual__logo'>
                 <img src="/assets/images/png/logo_head_1.png" alt="">
             </a>
+            <div class="keyvisual__sponsor">
+                <a href="" class="keyvisual__sponsor__name">POWERED BY Re-SOHKO</a>
+            </div>
         </div>
         <header>
-            <nav class='nav__wrapper'>
-                <div class="logo">
+            <nav class='nav__wrapper is-top'>
+                <div class="nav__wrapper__logo">
                     <img src="/assets/images/png/logo.png" alt="">
                 </div>
                 <ul class='nav__menu'>
@@ -58,26 +61,24 @@
             <section class='product'>
                 <div class="product__list">
                     <ul class='product__list__name'>
-                        <li><a href="">全て</a></li>
-                        <li><a href="">ドア</a></li>
-                        <li><a href="">階段</a></li>
-                        <li><a href="">照明</a></li>
-                        <li><a href="">棚</a></li>
-                        <li><a href="">テーブル</a></li>
-                        <li><a href="">椅子</a></li>
-                        <li><a href="">植物</a></li>
-                        <li><a href="">ファサード</a></li>
-                        <li><a href="">屋根</a></li>
-                        <li><a href="">壁</a></li>
-                        <li><a href="">床</a></li>
-                        <li><a href="">窓</a></li>
+                        <li data-list="all">全て</li>
+                        <li data-list="door">ドア</li>
+                        <li data-list="stair">階段</li>
+                        <li data-list="lamp">照明</li>
+                        <li data-list="shelf">棚</li>
+                        <li data-list="table">テーブル</li>
+                        <li data-list="chair">椅子</li>
+                        <li data-list="plant">植物</li>
+                        <li data-list="facade">ファサード</li>
+                        <li data-list="roof">屋根</li>
+                        <li data-list="wall">壁</li>
+                        <li data-list="floor">床</li>
+                        <li data-list="window">窓</li>
                     </ul>
-                    <div class="product__list__img">
-                        <img src="/assets/images/png/icon_all.png" alt="">
-                    </div>
+                    <div class="product__list__img"></div>
                 </div>
                 <ul class='product__wrap'>
-                    <li>
+                    <li data-category-type="shelf">
                         <a href="">
                             <img src="/assets/images/gif/LadderShelfThumbnail.gif" alt="">
                             <p class='product__jpExplain'>棚</p>
@@ -86,7 +87,7 @@
                         </a>
                         <div class="product__map is-door"></div>
                     </li>
-                    <li>
+                    <li data-category-type="shelf">
                         <a href="">
                             <img src="/assets/images/gif/TransformBoxThumbnail_3.gif" alt="">
                             <p class='product__jpExplain'>棚</p>
@@ -95,7 +96,7 @@
                         </a>
                         <div class="product__map is-shelf"></div>
                     </li>
-                    <li>
+                    <li data-category-type="chair">
                         <a href="">
                             <img src="/assets/images/gif/OpenDeskStoolThumbnail.gif" alt="">
                             <p class='product__jpExplain'>椅子</p>
@@ -104,7 +105,7 @@
                         </a>
                         <div class="product__map is-chair"></div>
                     </li>
-                    <li>
+                    <li data-category-type="chair">
                         <a href="">
                             <img src="/assets/images/gif/EnzoMari1123QThumbnail.gif" alt="">
                             <p class='product__jpExplain'>椅子</p>
@@ -113,7 +114,7 @@
                         </a>
                         <div class="product__map is-chair"></div>
                     </li>
-                    <li>
+                    <li data-category-type="chair">
                         <a href="">
                             <img src="/assets/images/gif/EnzoMari1123HThumbnail.gif" alt="">
                             <p class='product__jpExplain'>椅子</p>
@@ -122,7 +123,7 @@
                         </a>
                         <div class="product__map is-chair"></div>
                     </li>
-                    <li>
+                    <li data-category-type="chair">
                         <a href="">
                             <img src="/assets/images/gif/EnzoMari1123PThumbnail.gif" alt="">
                             <p class='product__jpExplain'>椅子</p>
@@ -131,7 +132,7 @@
                         </a>
                         <div class="product__map is-chair"></div>
                     </li>
-                    <li>
+                    <li data-category-type="door">
                         <a href="">
                             <img src="/assets/images/gif/WhiteBlackBoardThumbnail.gif" alt="">
                             <p class='product__jpExplain'>ドア</p>
@@ -140,7 +141,7 @@
                         </a>
                         <div class="product__map is-door"></div>
                     </li>
-                    <li>
+                    <li data-category-type="table">
                         <a href="">
                             <img src="/assets/images/gif/MikanTableThumbnail.gif" alt="">
                             <p class='product__jpExplain'>テーブル</p>
@@ -149,7 +150,7 @@
                         </a>
                         <div class="product__map is-door"></div>
                     </li>
-                    <li>
+                    <li data-category-type="lamp">
                         <a href="">
                             <img src="/assets/images/gif/FatteloLampThumbnail.gif" alt="">
                             <p class='product__jpExplain'>証明</p>
@@ -158,7 +159,7 @@
                         </a>
                         <div class="product__map is-lamp"></div>
                     </li>
-                    <li>
+                    <li data-category-type="shelf">
                         <a href="">
                             <img src="/assets/images/gif/MozillaOpenSourceShelfThumbnail.gif" alt="">
                             <p class='product__jpExplain'>棚</p>
@@ -167,7 +168,7 @@
                         </a>
                         <div class="product__map is-shelf"></div>
                     </li>
-                    <li>
+                    <li data-category-type="plant">
                         <a href="">
                             <img src="/assets/images/gif/MozillaOpenSourcePlanterThumbnail.gif" alt="">
                             <p class='product__jpExplain'>植物</p>
@@ -176,7 +177,7 @@
                         </a>
                         <div class="product__map is-plant"></div>
                     </li>
-                    <li>
+                    <li data-category-type="lamp">
                         <a href="">
                             <img src="/assets/images/gif/MozillaOpenSourceLampThumbnail.gif" alt="">
                             <p class='product__jpExplain'>証明</p>
@@ -191,8 +192,7 @@
                 </p>
             </section>
             <section class='movie'>
-                    <video src="http://opensohko.com/admin/wp-content/themes/opensohkodesign/video/anime_box_final_019.mp4" controls="" class="movie__setting" loop="" preload="none" poster="http://opensohko.com/admin/wp-content/themes/opensohkodesign/images/poster.jpg">
-                    </video>
+                    <video src="http://opensohko.com/admin/wp-content/themes/opensohkodesign/video/anime_box_final_019.mp4" controls="" class="movie__setting" loop="" preload="none" poster="http://opensohko.com/admin/wp-content/themes/opensohkodesign/images/poster.jpg"></video>
                     <div class="movie__btn"></div>
             </section>
             <section class='posts'>
@@ -266,5 +266,7 @@
             <div class="authorize">(C)Re-SOHKO ALL RIGHTS RESERVED.</div>
         </footer>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
